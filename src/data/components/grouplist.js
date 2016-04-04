@@ -9,6 +9,7 @@ const GroupList = (() => {
       onGroupCloseClick: React.PropTypes.func,
       onGroupTitleChange: React.PropTypes.func,
       onTabClick: React.PropTypes.func,
+      onTabClose: React.PropTypes.func,
       onTabDrag: React.PropTypes.func,
       onTabDragStart: React.PropTypes.func,
       uiHeightChanged: React.PropTypes.func
@@ -30,6 +31,7 @@ const GroupList = (() => {
             onGroupCloseClick: this.props.onGroupCloseClick,
             onGroupTitleChange: this.props.onGroupTitleChange,
             onTabClick: this.props.onTabClick,
+            onTabClose: this.props.onTabClose,
             onTabDrag: this.props.onTabDrag,
             onTabDragStart: this.props.onTabDragStart,
             uiHeightChanged: this.props.uiHeightChanged

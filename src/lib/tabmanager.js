@@ -35,6 +35,16 @@ TabManager.prototype = {
   },
 
   /**
+   * Close a given tab.
+   *
+   * @param {TabBrowser} tabBrowser
+   * @param {Number} index - the tabs index
+   */
+  closeTab: function(tabBrowser, index) {
+    tabBrowser.removeTab(tabBrowser.tabs[index]);
+  },
+
+  /**
    * Selects a given tab.
    *
    * @param {ChromeWindow} chromeWindow

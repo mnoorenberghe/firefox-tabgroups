@@ -1,6 +1,7 @@
 const Tab = React.createClass({
   propTypes: {
     onTabClick: React.PropTypes.func,
+    onTabClose: React.PropTypes.func,
     onTabDrag: React.PropTypes.func,
     onTabDragStart: React.PropTypes.func,
     tab: React.PropTypes.object.isRequired
@@ -28,7 +29,11 @@ const Tab = React.createClass({
           draggable: true
         },
         favicon,
-        React.DOM.span({className: "tab-title"}, this.props.tab.title)
+        React.DOM.span({className: "tab-title"}, this.props.tab.title),
+        React.DOM.i({
+          className: "tab-close fa fa-fw fa-close",
+          onClick: this.handleTabClose
+        })
       )
     );
   },
@@ -39,6 +44,15 @@ const Tab = React.createClass({
     let tab = this.props.tab;
     this.props.onTabClick(
       tab.group,
+      tab.index
+    );
+  },
+
+  handleTabClose: function(event) {
+    event.stopPropagation();
+
+    let tab = this.props.tab;
+    this.props.onTabClose(
       tab.index
     );
   },

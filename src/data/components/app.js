@@ -7,6 +7,7 @@ const App = React.createClass({
     onGroupCloseClick: React.PropTypes.func,
     onGroupTitleChange: React.PropTypes.func,
     onTabClick: React.PropTypes.func,
+    onTabClose: React.PropTypes.func,
     onTabDrag: React.PropTypes.func,
     onTabDragStart: React.PropTypes.func,
     uiHeightChanged: React.PropTypes.func

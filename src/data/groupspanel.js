@@ -32,6 +32,10 @@ const Actions = {
     addon.port.emit("Group:Drop", {sourceGroupID, tabIndex, targetGroupID});
   },
 
+  closeTab: function(tabIndex) {
+    addon.port.emit("Tab:Close", {tabIndex});
+  },
+
   selectTab: function(groupID, tabIndex) {
     addon.port.emit("Tab:Select", {groupID, tabIndex});
   },
@@ -58,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         onGroupCloseClick: Actions.closeGroup,
         onGroupTitleChange: Actions.renameGroup,
         onTabClick: Actions.selectTab,
+        onTabClose: Actions.closeTab,
         onTabDrag: Actions.dragTab,
         onTabDragStart: Actions.dragTabStart,
         uiHeightChanged: Actions.uiHeightChanged

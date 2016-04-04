@@ -1,6 +1,7 @@
 const TabList = React.createClass({
   propTypes: {
     onTabClick: React.PropTypes.func,
+    onTabClose: React.PropTypes.func,
     onTabDrag: React.PropTypes.func,
     onTabDragStart: React.PropTypes.func,
     tabs: React.PropTypes.array.isRequired
@@ -15,6 +16,7 @@ const TabList = React.createClass({
             key: tab.index,
             tab: tab,
             onTabClick: this.props.onTabClick,
+            onTabClose: this.props.onTabClose,
             onTabDrag: this.props.onTabDrag,
             onTabDragStart: this.props.onTabDragStart,
             uiHeightChanged: this.props.uiHeightChanged
